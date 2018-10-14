@@ -1,6 +1,6 @@
 #include<iostream>
 using namespace std;
-
+int count1 = 0;
 
 void  Insertion_Sort(int arr[],int size)
 {
@@ -13,9 +13,11 @@ void  Insertion_Sort(int arr[],int size)
 		 {
 			 arr[j + 1] = arr[j];
 			 j--;
+			 count1++;
 		 }
 		 arr[j + 1] = key;		//put the key in the empty position
 	}
+	cout << count1<<endl;
 }
 
 void printing(int arr[], int size)
@@ -29,15 +31,15 @@ void printing(int arr[], int size)
 int main()
 {
 	//test cases:
-	//int arr[] = {5,1,9,6,4,3,2,7,8};
+	int arr[] = {9,8,7,6,5,4,3,2,1};
 	//int arr[] = { 1,3,3,5,2 };
-	int arr[] = { 1,2,3,4,5 };
+	//int arr[] = { 1,2,3,4,5 };
 	//
 	int size = 5;
 
 	Insertion_Sort(arr,size);
 	printing(arr, size);
-	
+	cout << endl << count1;
 
 	system("pause");
 	return 0;
