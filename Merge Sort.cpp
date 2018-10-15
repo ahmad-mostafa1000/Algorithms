@@ -1,6 +1,6 @@
 #include<iostream>
 using namespace std;
-const int max_size = 10000;
+const int max_size = 10000;//avoid initialization error
 
 void  Merge(int arr[max_size], int start,int end,int mid)
 {
@@ -11,12 +11,12 @@ void  Merge(int arr[max_size], int start,int end,int mid)
 
 
 	for (int i = 0; i < nl; i++)
-		L[i] = arr[start+i]; //start+i: to add another elemnt without overriding previous data
+		L[i] = arr[start+i]; //start+i: to start looping from target index
 
 	for (int j = 0;j < nr; j++)
 		R[j] = arr[mid+j+1];
 
-	int i = 0, j = 0, k = start;
+	int i = 0, j = 0, k = start;//k=start: to accumulate int the 'arr' without override
 
 	while (i < nl &&j < nr)
 	{
@@ -54,7 +54,6 @@ void Merge_Sort(int arr[], int start,int end)
 	if (end > start)
 	{
 		int mid = (end +start )/ 2;
-
 
 		Merge_Sort(arr, start, mid );
 		Merge_Sort(arr, mid+1, end);
